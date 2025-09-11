@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    container_name: tcp_udp_server
+    ports:
+      - "8001:8001"
+      - "8002:8002"
+    networks:
+      - app-network
+
+  client1:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    container_name: client_1
+    command: ["python", "client.py", "1"]
+    depends_on:
+      - server
+    networks:
+      - app-network
+
+  client2:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    container_name: client_2
+    command: ["python", "client.py", "2"]
+    depends_on:
+      - server
+    networks:
+      - app-network
+
+  client3:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    container_name: client_3
+    command: ["python", "client.py", "3"]
+    depends_on:
+      - server
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
