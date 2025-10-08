@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  server1:
+    build: .
+    container_name: anycast_server1
+    environment:
+      - SERVER_ID=server1
+    command: python server.py
+    networks:
+      anycast_network:
+        aliases:
+          - server
+
+  server2:
+    build: .
+    container_name: anycast_server2
+    environment:
+      - SERVER_ID=server2
+    command: python server.py
+    networks:
+      anycast_network:
+        aliases:
+          - server
+
+  server3:
+    build: .
+    container_name: anycast_server3
+    environment:
+      - SERVER_ID=server3
+    command: python server.py
+    networks:
+      anycast_network:
+        aliases:
+          - server
+
+  client:
+    build: .
+    container_name: anycast_client
+    command: sleep infinity
+    depends_on:
+      - server1
+      - server2
+      - server3
+    networks:
+      - anycast_network
+
+networks:
+  anycast_network:
+    driver: bridge
