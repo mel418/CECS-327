@@ -31,7 +31,7 @@ docker exec anycast_client python client.py
 docker-compose logs -f
 
 # Capture traffic on one server (separate terminal)
-docker exec anycast_server1 tcpdump -i eth0 tcp port 5000 -n
+docker exec anycast_server2 tcpdump -i eth0 tcp port 5000 -n
 
 # When done
 docker-compose down
@@ -46,7 +46,7 @@ docker-compose -f docker-compose-multicast.yml down
 docker-compose -f docker-compose-multicast.yml build --no-cache
 
 # Start containers
-docker-compose -f docker-compose-multicast.yml up -d
+docker-compose -f docker-compose-multicast.yml up
 
 # Check status
 docker-compose -f docker-compose-multicast.yml ps
