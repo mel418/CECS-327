@@ -6,13 +6,13 @@ import os
 
 def main():
     MULTICAST_GROUP = '224.1.1.1'
-    PORT= 5007
+    PORT = 5007
     sender_id = os.environ.get('SENDER_ID', 'sender')
 
     # create UDP socket
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-    # sett TTL (time-to-live) for multicast packets
+    # set TTL (time-to-live) for multicast packets
     sock.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, 2)
 
     print(f"{sender_id} sending to {MULTICAST_GROUP}:{PORT}")
@@ -20,16 +20,16 @@ def main():
     try:
         count = 0
         while True:
-            # send different typesd of messages
+            # send different types of messages
             if count % 3 == 0:
                 # send plain text
                 message = f"Multicast message {count} from {sender_id}"
                 sock.sendto(message.encode('utf-8'), (MULTICAST_GROUP, PORT))
-                print(f"Send text: {message}")
+                print(f"Sent text: {message}")
 
             elif count % 3 == 1:
                 # send JSON data
-                data =  {
+                data = {
                     "sender": sender_id, 
                     "sensor": "temperature",
                     "value": round(20 + random.random() * 10, 2),
@@ -42,7 +42,7 @@ def main():
             else:
                 # send binary data
                 binary_data = bytes([random.randint(0, 255) for _ in range(10)])
-                sock.sendto(message.encode('utf-8'), (MULTICAST_GROUP, PORT))
+                sock.sendto(binary_data, (MULTICAST_GROUP, PORT))  # FIXED: was sending 'message' instead of 'binary_data'
                 print(f"Sent binary: {binary_data.hex()}")
 
             count += 1

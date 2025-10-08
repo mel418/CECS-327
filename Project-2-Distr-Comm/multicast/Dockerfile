@@ -6,7 +6,7 @@ RUN apt-get  update && apt-get install -y tcpdump && rm -rf /var/lib/apt/lists/*
 # set working dir
 WORKDIR /app
 
-COPY server.py client.py ./
+COPY multicast_sender.py multicast_receiver.py ./
 
 # Default command (will be overridden in docker-compose)
-CMD ["python", "server.py"]
+CMD ["python", "multicast_receiver.py"]
