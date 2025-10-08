@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   sender1:
     build: .
@@ -22,7 +20,7 @@ services:
   receiver1:
     build: .
     container_name: multicast_receiver1
-    command: python multicast_receiver.py --duration 30
+    command: python multicast_receiver.py --duration 120
     depends_on:
       - sender1
       - sender2
@@ -32,7 +30,7 @@ services:
   receiver2:
     build: .
     container_name: multicast_receiver2
-    command: python multicast_receiver.py --duration 45
+    command: python multicast_receiver.py --duration 150
     depends_on:
       - sender1
       - sender2
