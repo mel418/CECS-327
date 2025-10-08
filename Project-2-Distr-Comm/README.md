@@ -1,13 +1,10 @@
 # Distributed Communication Project
 
+This project demonstrates Anycast (TCP) and Multicast (UDP) communication patterns using Docker containers.
+
 ## Prerequisites
 - Docker
 - Docker Compose
-
-## Building
-```bash
-docker-compose build
-```
 
 ## Test Anycast (in anycast folder):
 ```bash
