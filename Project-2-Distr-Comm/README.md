@@ -10,7 +10,11 @@ This project demonstrates Anycast (TCP) and Multicast (UDP) communication patter
 ```bash
 cd anycast
 
-# Build and start
+# Clean start
+docker-compose down
+docker-compose build --no-cache
+
+# Start containers
 docker-compose up -d
 
 # Check all containers are running
@@ -26,7 +30,7 @@ docker exec anycast_client python client.py
 # View server logs
 docker-compose logs -f
 
-# Capture traffic on one server
+# Capture traffic on one server (separate terminal)
 docker exec anycast_server1 tcpdump -i eth0 tcp port 5000 -n
 
 # When done
@@ -37,13 +41,20 @@ docker-compose down
 ```bash
 cd multicast
 
-# Build and start
+# Clean start
+docker-compose -f docker-compose-multicast.yml down
+docker-compose -f docker-compose-multicast.yml build --no-cache
+
+# Start containers
 docker-compose -f docker-compose-multicast.yml up -d
+
+# Check status
+docker-compose -f docker-compose-multicast.yml ps
 
 # Watch logs in real-time
 docker-compose -f docker-compose-multicast.yml logs -f
 
-# In another terminal, capture traffic
+# In another(separate) terminal, capture traffic
 docker exec multicast_receiver1 tcpdump -i eth0 udp port 5007 -n -v
 
 # Let it run for about 1 minute to see the behavior
