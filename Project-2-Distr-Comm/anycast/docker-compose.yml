@@ -4,7 +4,7 @@ services:
     container_name: anycast_server1
     environment:
       - SERVER_ID=server1
-    command: python server.py
+    command: python -u server.py
     networks:
       anycast_network:
         aliases:
@@ -15,7 +15,7 @@ services:
     container_name: anycast_server2
     environment:
       - SERVER_ID=server2
-    command: python server.py
+    command: python -u server.py
     networks:
       anycast_network:
         aliases:
@@ -26,7 +26,7 @@ services:
     container_name: anycast_server3
     environment:
       - SERVER_ID=server3
-    command: python server.py
+    command: python -u server.py
     networks:
       anycast_network:
         aliases:
