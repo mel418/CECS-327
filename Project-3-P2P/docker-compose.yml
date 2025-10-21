@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  bootstrap:
+    build:
+      context: .
+      dockerfile: bootstrap.Dockerfile
+    container_name: bootstrap
+    ports:
+      - "5000:5000"
+    networks:
+      - p2p-network
+
+  node1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node1
+    environment:
+      - BOOTSTRAP_URL=http://bootstrap:5000
+      - NODE_URL=http://node1:5000
+    ports:
+      - "5001:5000"
+    depends_on:
+      - bootstrap
+    networks:
+      - p2p-network
+
+  node2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node2
+    environment:
+      - BOOTSTRAP_URL=http://bootstrap:5000
+      - NODE_URL=http://node2:5000
+    ports:
+      - "5002:5000"
+    depends_on:
+      - bootstrap
+    networks:
+      - p2p-network
+
+  node3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node3
+    environment:
+      - BOOTSTRAP_URL=http://bootstrap:5000
+      - NODE_URL=http://node3:5000
+    ports:
+      - "5003:5000"
+    depends_on:
+      - bootstrap
+    networks:
+      - p2p-network
+
+networks:
+  p2p-network:
+    driver: bridge
