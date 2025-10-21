@@ -1,0 +1,714 @@
+networks:
+  p2p-network:
+    driver: bridge
+services:
+  bootstrap:
+    build:
+      context: .
+      dockerfile: bootstrap.Dockerfile
+    container-name: bootstrap
+    networks:
+    - p2p-network
+    ports:
+    - 5000:5000
+  node1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node1
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node1:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5001:5000
+  node10:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node10
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node10:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5010:5000
+  node11:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node11
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node11:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5011:5000
+  node12:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node12
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node12:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5012:5000
+  node13:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node13
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node13:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5013:5000
+  node14:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node14
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node14:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5014:5000
+  node15:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node15
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node15:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5015:5000
+  node16:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node16
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node16:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5016:5000
+  node17:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node17
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node17:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5017:5000
+  node18:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node18
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node18:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5018:5000
+  node19:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node19
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node19:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5019:5000
+  node2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node2
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node2:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5002:5000
+  node20:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node20
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node20:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5020:5000
+  node21:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node21
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node21:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5021:5000
+  node22:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node22
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node22:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5022:5000
+  node23:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node23
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node23:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5023:5000
+  node24:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node24
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node24:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5024:5000
+  node25:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node25
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node25:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5025:5000
+  node26:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node26
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node26:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5026:5000
+  node27:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node27
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node27:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5027:5000
+  node28:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node28
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node28:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5028:5000
+  node29:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node29
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node29:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5029:5000
+  node3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node3
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node3:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5003:5000
+  node30:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node30
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node30:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5030:5000
+  node31:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node31
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node31:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5031:5000
+  node32:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node32
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node32:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5032:5000
+  node33:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node33
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node33:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5033:5000
+  node34:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node34
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node34:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5034:5000
+  node35:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node35
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node35:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5035:5000
+  node36:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node36
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node36:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5036:5000
+  node37:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node37
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node37:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5037:5000
+  node38:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node38
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node38:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5038:5000
+  node39:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node39
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node39:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5039:5000
+  node4:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node4
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node4:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5004:5000
+  node40:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node40
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node40:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5040:5000
+  node41:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node41
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node41:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5041:5000
+  node42:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node42
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node42:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5042:5000
+  node43:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node43
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node43:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5043:5000
+  node44:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node44
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node44:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5044:5000
+  node45:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node45
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node45:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5045:5000
+  node46:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node46
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node46:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5046:5000
+  node47:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node47
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node47:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5047:5000
+  node48:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node48
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node48:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5048:5000
+  node49:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node49
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node49:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5049:5000
+  node5:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node5
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node5:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5005:5000
+  node50:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node50
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node50:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5050:5000
+  node6:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node6
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node6:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5006:5000
+  node7:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node7
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node7:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5007:5000
+  node8:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node8
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node8:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5008:5000
+  node9:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node9
+    depends_on:
+    - bootstrap
+    environment:
+    - BOOTSTRAP_URL=http://bootstrap:5000
+    - NODE_URL=http://node9:5000
+    networks:
+    - p2p-network
+    ports:
+    - 5009:5000
+version: '3.8'
