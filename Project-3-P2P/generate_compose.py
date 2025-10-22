@@ -15,13 +15,13 @@ def generate_compose(num_nodes):
             'context': '.',
             'dockerfile': 'bootstrap.Dockerfile'
         },
-        'container-name': 'bootstrap',
+        'container_name': 'bootstrap',  # FIXED: was 'container-name'
         'ports': ['5000:5000'],
         'networks': ['p2p-network']
     }
 
-    #generate peer nodes
-    for i in range(1, num_nodes +1):
+    # generate peer nodes
+    for i in range(1, num_nodes + 1):
         node_name = f'node{i}'
         config['services'][node_name] = {
             'build': {
@@ -37,10 +37,11 @@ def generate_compose(num_nodes):
             'depends_on': ['bootstrap'],
             'networks': ['p2p-network']
         }
+    
     with open('docker-compose-large.yml', 'w') as f:
         yaml.dump(config, f, default_flow_style=False)
 
     print(f"Generated docker-compose-large.yml with {num_nodes} nodes")
 
 if __name__ == '__main__':
-    generate_compose(50) # change to 100 if needed
+    generate_compose(50)  # change to 100 if needed

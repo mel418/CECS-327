@@ -6,7 +6,7 @@ services:
     build:
       context: .
       dockerfile: bootstrap.Dockerfile
-    container-name: bootstrap
+    container_name: bootstrap
     networks:
     - p2p-network
     ports:
