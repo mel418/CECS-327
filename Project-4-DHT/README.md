@@ -14,7 +14,6 @@ docker-compose build
 ```powershell
 docker-compose up -d
 ```
-Wait 15 seconds for nodes to initialize.
 
 ### Test
 
@@ -22,7 +21,7 @@ Phase 1 - File Storage:
 ```powershell
 echo "Hello DHT!" > test.txt
 curl.exe -F "file=@test.txt" http://localhost:5001/upload
-curl.exe http://localhost:5001/download/test.txt
+curl.exe http://localhost:5001/download/test.txt --output -
 ```
 
 Phase 2 - Key-Value Store:
