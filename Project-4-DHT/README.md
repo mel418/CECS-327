@@ -13,6 +13,11 @@ docker-compose build
 ### Run
 ```powershell
 docker-compose up -d
+docker ps
+```
+### List files in directory
+```powershell
+ls
 ```
 
 ### Test
@@ -22,6 +27,8 @@ Phase 1 - File Storage:
 echo "Hello DHT!" > test.txt
 curl.exe -F "file=@test.txt" http://localhost:5001/upload
 curl.exe http://localhost:5001/download/test.txt --output -
+rm test.txt
+
 ```
 
 Phase 2 - Key-Value Store:
